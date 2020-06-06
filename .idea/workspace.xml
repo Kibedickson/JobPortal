@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2e9270-b29b-4e35-9383-57fdcebb6549" name="Default Changelist" comment="" />
+    <list default="true" id="9f2e9270-b29b-4e35-9383-57fdcebb6549" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/pages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/pages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/job-page.blade.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +188,11 @@
       <workItem from="1588862945873" duration="3825000" />
       <workItem from="1588936889640" duration="799000" />
       <workItem from="1589287290151" duration="493000" />
+      <workItem from="1589565158044" duration="781000" />
+      <workItem from="1589614093989" duration="95000" />
+      <workItem from="1590822616995" duration="164000" />
+      <workItem from="1591443774027" duration="6000" />
+      <workItem from="1591443816737" duration="2032000" />
     </task>
     <servers />
   </component>

@@ -108,33 +108,6 @@
 </div>
 
 
-<section class="browse-catagories section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Browse by Catagories</h2>
-            <p></p>
-        </div>
-
-
-        <div class="row">
-            @foreach($job as $jobs)
-                <div class="col-lg-3 col-md-4 col-xs-12">
-                    <a href="browse-categories.html" class="img-box">
-                        <div class="img-box-content">
-                            <h4>{{ $jobs->category }}</h4>
-                            <span>2379 Jobs</span>
-                        </div>
-                        <div class="img-box-background">
-                            <img class="img-fluid" src="{{ URL::asset('assets/img/categories/img2.jpg') }}" alt="">
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-
 <section id="featured" class="section bg-cyan">
     <div class="container">
         <div class="section-header">
@@ -246,147 +219,6 @@
 </section>
 
 
-<section id="job-listings" class="section bg-cyan">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Recent Job Post</h2>
-            <p></p>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-xs-12">
-                <a class="job-listings" href="job-details.html">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-12">
-                            <div class="job-company-logo">
-                                <img src="{{ URL::asset('assets/img/features/img1.png') }}" alt="">
-                            </div>
-                            <div class="job-details">
-                                <h3>App Developer</h3>
-                                <span class="company-neme">
-AmazeSoft
-</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-<span class="btn-open">
-7 Open Jobs
-</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <div class="location">
-                                <i class="lni lni-map-marker"></i> New Yourk, US
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-full-time">Full Time</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-apply">Apply Now</span>
-                        </div>
-                    </div>
-                </a>
-                <a class="job-listings" href="job-details.html">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-12">
-                            <div class="job-company-logo">
-                                <img src="{{ URL::asset('assets/img/features/img2.png') }}" alt="">
-                            </div>
-                            <div class="job-details">
-                                <h3>App Developer</h3>
-                                <span class="company-neme">
-AmazeSoft
-</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-<span class="btn-open">
-7 Open Jobs
-</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <div class="location">
-                                <i class="lni lni-map-marker"></i> New Yourk, US
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-full-time">Full Time</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-apply">Apply Now</span>
-                        </div>
-                    </div>
-                </a>
-                <a class="job-listings" href="job-details.html">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-12">
-                            <div class="job-company-logo">
-                                <img src="{{ URL::asset('assets/img/features/img3.png') }}" alt="">
-                            </div>
-                            <div class="job-details">
-                                <h3>App Developer</h3>
-                                <span class="company-neme">
-AmazeSoft
-</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-<span class="btn-open">
-7 Open Jobs
-</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <div class="location">
-                                <i class="lni lni-map-marker"></i> New Yourk, US
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-full-time">Full Time</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-apply">Apply Now</span>
-                        </div>
-                    </div>
-                </a>
-                <a class="job-listings" href="job-details.html">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-12">
-                            <div class="job-company-logo">
-                                <img src="{{ URL::asset('assets/img/features/img4.png') }}" alt="">
-                            </div>
-                            <div class="job-details">
-                                <h3>App Developer</h3>
-                                <span class="company-neme">
-AmazeSoft
-</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-<span class="btn-open">
-7 Open Jobs
-</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <div class="location">
-                                <i class="lni lni-map-marker"></i> New Yourk, US
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-full-time">Full Time</span>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <span class="btn-apply">Apply Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 text-center mt-4">
-                <a href="#" class="btn btn-common">Load more listing</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section class="how-it-works section">
     <div class="container">
         <div class="section-header">
@@ -426,86 +258,11 @@ AmazeSoft
 </section>
 
 
-<div id="pricing" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Pricing Plan</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br> metus effici turac fringilla lorem facilisis.</p>
-        </div>
-        <div class="row pricing-tables">
-            <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="pricing-table border-color-defult">
-                    <div class="pricing-details">
-                        <div class="icon">
-                            <i class="lni lni-rocket"></i>
-                        </div>
-                        <h2>Professional</h2>
-                        <ul>
-                            <li>Post 1 Job</li>
-                            <li>No Featured Job</li>
-                            <li>Edit Your Job Listing</li>
-                            <li>Manage Application</li>
-                            <li>30-day Expired</li>
-                        </ul>
-                        <div class="price"><span>$</span>0<span>/Month</span></div>
-                    </div>
-                    <div class="plan-button">
-                        <a href="#" class="btn btn-border">Get Started</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="pricing-table pricing-active border-color-red">
-                    <div class="pricing-details">
-                        <div class="icon">
-                            <i class="lni lni-drop"></i>
-                        </div>
-                        <h2>Advance</h2>
-                        <ul>
-                            <li>Post 1 Job</li>
-                            <li>No Featured Job</li>
-                            <li>Edit Your Job Listing</li>
-                            <li>Manage Application</li>
-                            <li>30-day Expired</li>
-                        </ul>
-                        <div class="price"><span>$</span>20<span>/Month</span></div>
-                    </div>
-                    <div class="plan-button">
-                        <a href="#" class="btn btn-border">Get Started</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12">
-                <div class="pricing-table border-color-green">
-                    <div class="pricing-details">
-                        <div class="icon">
-                            <i class="lni lni-briefcase"></i>
-                        </div>
-                        <h2>Premium</h2>
-                        <ul>
-                            <li>Post 1 Job</li>
-                            <li>No Featured Job</li>
-                            <li>Edit Your Job Listing</li>
-                            <li>Manage Application</li>
-                            <li>30-day Expired</li>
-                        </ul>
-                        <div class="price"><span>$</span>40<span>/Month</span></div>
-                    </div>
-                    <div class="plan-button">
-                        <a href="#" class="btn btn-border">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <section id="counter" class="section bg-gray">
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="counter-box">
                     <div class="icon"><i class="lni lni-home"></i></div>
                     <div class="fact-count">
@@ -516,29 +273,7 @@ AmazeSoft
             </div>
 
 
-            <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box">
-                    <div class="icon"><i class="lni lni-briefcase"></i></div>
-                    <div class="fact-count">
-                        <h3><span class="counter">80</span></h3>
-                        <p>All Companies</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="counter-box">
-                    <div class="icon"><i class="lni lni-pencil-alt"></i></div>
-                    <div class="fact-count">
-                        <h3><span class="counter">900</span></h3>
-                        <p>Resumes</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="counter-box">
                     <div class="icon"><i class="lni lni-save"></i></div>
                     <div class="fact-count">
