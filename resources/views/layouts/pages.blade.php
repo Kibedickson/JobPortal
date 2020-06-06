@@ -38,43 +38,38 @@
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                        <li class="nav-item active">
+                        <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
                             <a class="nav-link" href="/">
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pages
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="about">About</a></li>
-                                <li><a class="dropdown-item" href="job-page">Job Page</a></li>
-                                <li><a class="dropdown-item" href="job-details">Job Details</a></li>
-                                <li><a class="dropdown-item" href="contact">Contact</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown {{ (request()->is('browse-jobs','job-details')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Candidates
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="browse-jobs">Browse Jobs</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="browse-jobs">Browse Jobs</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="job-details">Job Details</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown {{ (request()->is('post-job', 'manage-jobs','manage-applications')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Employers
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="post-job">Add Job</a></li>
-                                <li><a class="dropdown-item" href="manage-jobs">Manage Jobs</a></li>
-                                <li><a class="dropdown-item" href="manage-applications">Manage Applications</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('post-job')) ? 'active' : '' }}" href="post-job">Add Job</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('manage-jobs')) ? 'active' : '' }}" href="manage-jobs">Manage Jobs</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="manage-applications">Manage Applications</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
                             <a class="nav-link" href="contact">
                                 Contact
+                            </a>
+                        </li>
+                        <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}">
+                            <a class="nav-link" href="about">
+                                About
                             </a>
                         </li>
                         @guest
