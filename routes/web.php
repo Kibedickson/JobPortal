@@ -11,12 +11,14 @@
 |
 */
 
+use Illuminate\Http\Request;
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('addjob', 'JobsController@store');
+Route::get('job-details/{id}', 'JobsController@show');
 
 Route::group(['middleware' => ['auth']], function (){
     Route::get('about', function (){
@@ -27,9 +29,6 @@ Route::group(['middleware' => ['auth']], function (){
     });
     Route::get('browse-jobs', function (){
         return view('pages.browse-jobs');
-    });
-    Route::get('job-details', function (){
-        return view('pages.job-details');
     });
     Route::get('contact', function (){
         return view('pages.contact');

@@ -28,7 +28,9 @@ class JobsController extends Controller
         return redirect('manage-jobs');
     }
 
-    public function show(){
-        return view('pages.browse-jobs');
+    public function show($id){
+        $job = Jobs::all()->where('id', $id)->first();
+      return view('pages.job-details', compact('job'));
     }
+
 }

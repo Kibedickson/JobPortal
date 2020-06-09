@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view::composer(['pages.browse-jobs', 'pages.job-page', 'home'], function ($view){
+        view::composer(['pages.browse-jobs', 'pages.job-page'], function ($view){
             $view->with('job', Jobs::paginate(8));
 
         });

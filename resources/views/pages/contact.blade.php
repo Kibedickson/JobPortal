@@ -20,7 +20,8 @@
                     <div class="col-md-12 col-lg-6 col-sm-12">
                         <div class="contact-block">
                             <h2>Contact Form</h2>
-                            <form id="contactForm">
+                            <form id="contactForm" action="{{ url('contact') }}" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
