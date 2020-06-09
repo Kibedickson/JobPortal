@@ -14,15 +14,13 @@ class JobsController extends Controller
     }
     public function store(){
         $data = request()->validate([
-            'job_title' => 'required',
-            'owner' => 'required',
+            'title' => 'required',
             'location' => 'required',
-            'category' => 'required',
-            'job_tag' => 'required',
             'description' => 'required',
-            'contact' => 'required',
-            'closing_date' => 'required',
+            'category' => 'required',
+            'deadline' => 'required',
         ]);
+        $data['employer_id'] = auth()->id();
 
         Jobs::create($data);
         return redirect('manage-jobs');

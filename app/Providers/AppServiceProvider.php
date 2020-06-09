@@ -34,6 +34,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('job', Jobs::all()->sortBy('closing_date')->take(6));
             $view->with('total_Jobs', Jobs::all()->count());
             $view->with('total_Users', User::all()->count());
+            $view->with('id', User::all()->where('id', '1'));
+        });
+        view::composer(['layouts.pages'], function ($view){
+
         });
     }
 }

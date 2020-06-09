@@ -15,12 +15,23 @@ class JobsTableSeeder extends Seeder
         $jobs = [
             [
                 'id' =>1,
-                'job_title'=> 'Web Developer',
-                'job_location' => 'Nairobi',
-                'job_description' => 'Lorem ipsum lorem ipsum',
-                'job_category' => 'Programming',
-                'job_deadline' => now(),
+                'employer_id'=>'1',
+                'title'=> 'Web Developer',
+                'location' => 'Nairobi',
+                'description' => 'Lorem ipsum lorem ipsum',
+                'category' => 'Programming',
+                'deadline' => now(),
+            ],
+            [
+                'id' => 2,
+                'employer_id'=>'2',
+                'title'=> 'Web Developer',
+                'location' => 'Nairobi',
+                'description' => 'Lorem ipsum lorem ipsum',
+                'category' => 'Programming',
+                'deadline' => now(),
             ]
+
         ];
 
         Jobs::insert($jobs);

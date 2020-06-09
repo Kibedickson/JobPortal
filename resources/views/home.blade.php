@@ -121,14 +121,14 @@
                             <img src="{{ URL::asset('assets/img/features/img1.png') }}" alt="">
                         </div>
                         <div class="content">
-                            <h3><a href="job-details.html">{{ $jobs->job_title }}</a></h3>
-                            <p class="brand">{{ $jobs->tag }}</p>
+                            <h3><a href="">{{ $jobs->job_title }}</a></h3>
+                            <p class="brand">{{ $jobs->job_category }}</p>
                             <div class="tags">
-                                <span><i class="lni lni-map-marker"></i> {{ $jobs->location }}</span>
-                                <span><i class="lni lni-user"></i>{{ $jobs->owner }}</span>
+                                <span><i class="lni lni-map-marker"></i> {{ $jobs->job_location }}</span>
+                                <span><i class="lni lni-user"></i></span>
                             </div>
                             <div class="tags">
-                                <span><i class="lni lni-calendar"></i>{{ $jobs->closing_date }}</span>
+                                <span><i class="lni lni-calendar"></i>{{ $jobs->job_deadline}}</span>
                             </div>
                             <a href="job-details"><span class="full-time">Apply</span></a>
                         </div>

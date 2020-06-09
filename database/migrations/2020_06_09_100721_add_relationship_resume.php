@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJobUsersTable extends Migration
+class AddRelationshipResume extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateJobUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_user', function (Blueprint $table) {
-            $table->bigInteger('user_id');
-            $table->bigInteger('job_id');
-            $table->timestamps();
+        Schema::table('resumes', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateJobUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_users');
+        //
     }
 }

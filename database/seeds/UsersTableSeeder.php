@@ -14,10 +14,23 @@ class UsersTableSeeder extends Seeder
     {
         $users = [
             [
-                'id' => 1,
+
                 'name' =>'Dickson',
                 'email' => 'kibedickson3@gmail.com',
-                'contact' => '0716732809',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+            ],
+            [
+
+                'name' =>'John Doe',
+                'email' => 'johndoe@gmail.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+            ],
+            [
+
+                'name' =>'Jane Doe',
+                'email' => 'janedoe@gmail.com',
                 'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
                 'remember_token' => null,
             ],
