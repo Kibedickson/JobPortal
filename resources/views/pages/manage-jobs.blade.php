@@ -16,7 +16,7 @@
     <div id="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="col-lg-2 col-md-4 col-xs-12">
                     <div class="right-sideabr">
                         <h4>Manage Account</h4>
                         <ul class="list-item">
@@ -30,103 +30,77 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-xs-12">
+                <div class="col-lg-10 col-md-8 col-xs-12">
                     <div class="job-alerts-item candidates">
                         <h3 class="alerts-title">Manage Jobs</h3>
                         <div class="alerts-list">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p>Name</p>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p>Keywords</p>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p>Candidates</p>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p>Featured</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alerts-content">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-5 col-xs-12">
-                                    <h3>Web Designer</h3>
-                                    <span class="location"><i class="lni-map-marker"></i> Manhattan, NYC</span>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p><span class="full-time">Full-Time</span></p>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <div class="can-img"><a href="#"><img src="assets/img/jobs/candidates.png" alt=""></a></div>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <p><i class="lni-star"></i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alerts-content">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-5 col-xs-12">
-                                    <h3>Web Designer</h3>
-                                    <span class="location"><i class="lni-map-marker"></i> Manhattan, NYC</span>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p><span class="full-time">Full-Time</span></p>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <div class="can-img"><a href="#"><img src="assets/img/jobs/candidates.png" alt=""></a></div>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <p><i class="lni-star"></i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alerts-content">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-5 col-xs-12">
-                                    <h3>Web Designer</h3>
-                                    <span class="location"><i class="lni-map-marker"></i> Manhattan, NYC</span>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p><span class="full-time">Full-Time</span></p>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <div class="can-img"><a href="#"><img src="assets/img/jobs/candidates.png" alt=""></a></div>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <p><i class="lni-star"></i></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alerts-content">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-5 col-xs-12">
-                                    <h3>Web Designer</h3>
-                                    <span class="location"><i class="lni-map-marker"></i> Manhattan, NYC</span>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12">
-                                    <p><span class="full-time">Full-Time</span></p>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <div class="can-img"><a href="#"><img src="assets/img/jobs/candidates.png" alt=""></a></div>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-xs-12">
-                                    <p><i class="lni-star"></i></p>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">
+                                                Title
+                                            </th>
+                                            <th scope="col">
+                                                Description
+                                            </th>
+                                            <th scope="col">
+                                                Deadline
+                                            </th>
+                                            <th scope="col">
+                                                Candidate
+                                            </th>
+                                            <th>
+
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($jobs as $job)
+                                        <tr style="text-transform: capitalize;">
+                                            <td>
+                                                <p>{{ $job->title }}</p>
+                                            </td>
+                                            <td>
+                                                <p>{{ $job->description }}</p>
+                                            </td>
+                                            <td>
+                                                <p>{{ $job->deadline }}</p>
+                                            </td>
+                                            <td>
+                                                <p>{{ $job->candidate }}</p>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <a class=" btn btn-sm btn-common" href="">
+                                                            Prop({{ $jobs_count }})
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <a class="btn btn-sm btn-common" href="">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <form action="/manage-jobs/{{$job->id}}" method="POST">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-sm btn-common">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <br>
 
                         <ul class="pagination">
-                            <li class="active"><a href="#" class="btn-prev"><i class="lni-angle-left"></i> prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="active"><a href="#" class="btn-next">Next <i class="lni-angle-right"></i></a></li>
+                            <li>{{ $jobs->links() }}</li>
                         </ul>
 
                     </div>

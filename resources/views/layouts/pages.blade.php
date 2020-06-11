@@ -43,7 +43,6 @@
                                 Home
                             </a>
                         </li>
-                        @if(auth()->user() ->isCandidate())
                         <li class="nav-item dropdown {{ (request()->is('browse-jobs','job-details')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Candidates
@@ -53,8 +52,6 @@
                                 <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="job-details">Job Details</a></li>
                             </ul>
                         </li>
-                        @endif
-                        @if(auth()->user() ->isEmployer())
                         <li class="nav-item dropdown {{ (request()->is('post-job', 'manage-jobs','manage-applications')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Employer
@@ -65,7 +62,6 @@
                                 <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="manage-applications">Manage Applications</a></li>
                             </ul>
                         </li>
-                        @endif
                         <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
                             <a class="nav-link" href="contact">
                                 Contact

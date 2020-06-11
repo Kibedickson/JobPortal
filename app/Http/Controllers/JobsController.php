@@ -26,9 +26,16 @@ class JobsController extends Controller
         return redirect('manage-jobs');
     }
 
-    public function show($id){
-        $job = Jobs::all()->where('id', $id)->first();
-      return view('pages.job-details', compact('job'));
+    public function show(){
+        $jobs = Jobs::where('employer_id', auth()->id())->paginate(3);
+        $jobs_count = Jobs::where('employer_id', auth()->id())->where('candidate_id',!null)->count();
+
+        return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
+    }
+
+    public function destroy(Jobs $id){
+        $id->delete();
+        return back();
     }
 
 }

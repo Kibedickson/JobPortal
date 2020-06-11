@@ -51,10 +51,10 @@ class User extends Authenticatable
     }
 
     public function isEmployer(){
-        return$this->roles()->where('id', 2)->count()>0;
+        return $this->roles()->where('id', 2)->count()>0;
     }
     public function isCandidate(){
-        return$this->roles()->where('id', 3)->count()>0;
+        return $this->roles()->where('id', 3)->count()>0;
     }
 
 }
