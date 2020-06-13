@@ -19,6 +19,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'kibedickson3@gmail.com',
                 'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
                 'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
 
@@ -26,6 +28,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'johndoe@gmail.com',
                 'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
                 'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
 
@@ -33,7 +37,72 @@ class UsersTableSeeder extends Seeder
                 'email' => 'janedoe@gmail.com',
                 'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
                 'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
+            [
+
+                'name' =>'Kirsten Shaffer',
+                'email' => 'nijupe@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Jane Beard',
+                'email' => 'dujiq@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Henry Horn',
+                'email' => 'sapys@mailinator.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Ifeoma Larson',
+                'email' => 'kyrop@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Florence Baldwin',
+                'email' => 'wupebez@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Hadley Palmer',
+                'email' => 'pyvemaq@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+
+                'name' =>'Kelsie Mclean',
+                'email' => 'dukozyxo@mailinator.net',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ];
 
         User::insert($users);

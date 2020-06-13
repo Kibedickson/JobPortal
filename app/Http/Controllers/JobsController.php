@@ -33,6 +33,23 @@ class JobsController extends Controller
         return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
     }
 
+    public function edit(Jobs $job){
+        return view('pages.edit-job', compact('job'));
+    }
+    public function update(Jobs $job){
+        $data = request()->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'deadline' => 'required',
+        ]);
+        $data['employer_id'] = auth()->id();
+
+        $job->update($data);
+        return redirect('manage-jobs');
+    }
+
     public function destroy(Jobs $id){
         $id->delete();
         return back();
