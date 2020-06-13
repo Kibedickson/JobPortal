@@ -54,7 +54,7 @@
                         </li>
                         <li class="nav-item dropdown {{ (request()->is('post-job', 'manage-jobs','manage-applications')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Employers
+                                Employer
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item{{ (request()->is('post-job')) ? 'active' : '' }}" href="post-job">Add Job</a></li>

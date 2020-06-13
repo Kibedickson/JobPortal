@@ -4,143 +4,156 @@
     <div id="carousel-area">
         <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-slider" data-slide-to="1"></li>
-                <li data-target="#carousel-slider" data-slide-to="2"></li>
+                @if(auth()->user()->isCandidate())
+                    <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-slider" data-slide-to="1"></li>
+                @endif
+                @if(auth()->user()->isEmployer())
+                    <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                @endif
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
-                    <div class="carousel-caption text-left">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <h2 class="wow fadeInRight" data-wow-delay="0.4s">Find the job you <br> deserve</h2>
-                                <p class="wow fadeInRight" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
-                                <a href="browse-jobs" class="btn btn-lg btn-common btn-effect wow fadeInRight" data-wow-delay="0.9s">See our jobs</a>
-                                <a href="browse-jobs" class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="1.2s">Search jobs</a>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-                                <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
-                                    <img src="{{ URL::asset('assets/img/slider/img-1.png') }}" alt="">
+                @if(auth()->user()->isCandidate())
+                    <div class="carousel-item active">
+                        <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
+                        <div class="carousel-caption text-left">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <h2 class="wow fadeInRight" data-wow-delay="0.4s">Find the job you <br> deserve</h2>
+                                    <p class="wow fadeInRight" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
+                                    <a href="browse-jobs" class="btn btn-lg btn-common btn-effect wow fadeInRight" data-wow-delay="0.9s">See our jobs</a>
+                                    <a href="browse-jobs" class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="1.2s">Search jobs</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                                    <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{{ URL::asset('assets/img/slider/img-1.png') }}" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
-                    <div class="carousel-caption text-left">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">100+ Jobs waiting <br>for you!</h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
-                                <a href="browse-jobs" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="0.9s">See our jobs</a>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-                                <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
-                                    <img src="{{ URL::asset('assets/img/slider/img-2.png') }}" alt="">
+                    <div class="carousel-item">
+                        <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
+                        <div class="carousel-caption text-left">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <h2 class="wow fadeInUp" data-wow-delay="0.4s">100+ Jobs waiting <br>for you!</h2>
+                                    <p class="wow fadeInUp" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
+                                    <a href="browse-jobs" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="0.9s">See our jobs</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                                    <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{{ URL::asset('assets/img/slider/img-2.png') }}" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
-                    <div class="carousel-caption text-left">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <h2 class="wow fadeInRight" data-wow-delay="0.4s">Post a job and hunt <br> amazing talents</h2>
-                                <p class="wow fadeInRight" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
-                                <a href="post-job" class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="1.2s">Post Job</a>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-                                <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
-                                    <img src="{{ URL::asset('assets/img/slider/img-3.png') }}" alt="">
+                    <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                        <span class="carousel-control" aria-hidden="true"><i class="lni lni-chevron-left"></i></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                        <span class="carousel-control" aria-hidden="true"><i class="lni lni-chevron-right"></i></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                @endif
+                @if(auth()->user()->isEmployer())
+                    <div class="carousel-item active">
+                        <img src="{{ URL::asset('assets/img/slider/bg-1.jpg') }}" alt="">
+                        <div class="carousel-caption text-left">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <h2 class="wow fadeInRight" data-wow-delay="0.4s">Post a job and hunt <br> amazing talents</h2>
+                                    <p class="wow fadeInRight" data-wow-delay="0.6s">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. <br> Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet.</p>
+                                    <a href="post-job" class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="1.2s">Post Job</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                                    <div class="img-wrapper wow fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{{ URL::asset('assets/img/slider/img-3.png') }}" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
-            <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
-                <span class="carousel-control" aria-hidden="true"><i class="lni lni-chevron-left"></i></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
-                <span class="carousel-control" aria-hidden="true"><i class="lni lni-chevron-right"></i></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
     </header>
 <div id="apply">
     <div class="container-fulid">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-xs-12 no-padding">
-                <div class="recruiter item-box">
-                    <div class="content-inner">
-                        <h5>I'm</h5>
-                        <h3>Employer!</h3>
-                        <p>Post a job to tell us about your project. We'll quickly match you with <br> the right jobseeker.</p>
-                        <a href="post-job" class="btn btn-border-filled">Post a Job</a>
-                    </div>
-                    <div class="img-thumb">
-                        <i class="lni lni-users"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-xs-12 no-padding">
-                <div class="jobseeker item-box">
-                    <div class="content-inner">
-                        <h5>I'm</h5>
-                        <h3>Jobseeker!</h3>
-                            <p>Search the job you deserve. We'll quickly match you with <br> the right employer.</p>
-                        <a href="browse-jobs" class="btn btn-border-filled">Browser Jobs</a>
-                    </div>
-                    <div class="img-thumb">
-                        <i class="lni lni-leaf"></i>
+            @if(auth()->user()->isEmployer())
+                <div class="col-lg-12 col-md-12 col-xs-12 no-padding">
+                    <div class="recruiter item-box">
+                        <div class="content-inner">
+                            <h5>I'm</h5>
+                            <h3>Employer!</h3>
+                            <p>Post a job to tell us about your project. We'll quickly match you with <br> the right jobseeker.</p>
+                            <a href="post-job" class="btn btn-border-filled">Post a Job</a>
+                        </div>
+                        <div class="img-thumb">
+                            <i class="lni lni-users"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
+            @if(auth()->user()->isCandidate())
+                <div class="col-lg-12 col-md-12 col-xs-12 no-padding">
+                    <div class="jobseeker item-box">
+                        <div class="content-inner">
+                            <h5>I'm</h5>
+                            <h3>Jobseeker!</h3>
+                                <p>Search the job you deserve. We'll quickly match you with <br> the right employer.</p>
+                            <a href="browse-jobs" class="btn btn-border-filled">Browser Jobs</a>
+                        </div>
+                        <div class="img-thumb">
+                            <i class="lni lni-leaf"></i>
+                        </div>
+                    </div>
+            @endif
         </div>
     </div>
 </div>
 
 
-<section id="featured" class="section bg-cyan">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Featured Jobs</h2>
-            <p></p>
-        </div>
-        <div class="row">
-            @foreach($job as $jobs)
-                <div class="col-lg-4 col-md-6 col-xs-12">
-                    <div class="job-featured">
-                        <div class="icon">
-                            <img src="{{ URL::asset('assets/img/features/img1.png') }}" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">{{ $jobs->job_title }}</a></h3>
-                            <p class="brand">{{ $jobs->tag }}</p>
-                            <div class="tags">
-                                <span><i class="lni lni-map-marker"></i> {{ $jobs->location }}</span>
-                                <span><i class="lni lni-user"></i>{{ $jobs->owner }}</span>
+@if(auth()->user()->isCandidate())
+    <section id="featured" class="section bg-cyan">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Jobs</h2>
+                <p></p>
+            </div>
+            <div class="row">
+                @foreach($job as $jobs)
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <div class="job-featured">
+                            <div class="icon">
+                                <img src="{{ URL::asset('assets/img/features/img1.png') }}" alt="">
                             </div>
-                            <div class="tags">
-                                <span><i class="lni lni-calendar"></i>{{ $jobs->closing_date }}</span>
+                            <div class="content">
+                                <h3><a href="">{{ $jobs->title }}</a></h3>
+                                <p class="brand">{{ $jobs->category }}</p>
+                                <div class="tags">
+                                    <span><i class="lni lni-map-marker"></i> {{ $jobs->location }}</span>
+                                    <span><i class="lni lni-user"></i>{{$jobs->employer->name }}</span>
+                                </div>
+                                <div class="tags">
+                                    <span><i class="lni lni-calendar"></i>{{ $jobs->deadline}}</span>
+                                </div>
+                                <a href="job-details"><span class="full-time">Apply</span></a>
                             </div>
-                            <a href="job-details"><span class="full-time">Apply</span></a>
                         </div>
                     </div>
+                @endforeach
+                <div class="col-12 text-center mt-4">
+                    <a href="browse-jobs" class="btn btn-common">Browse All Jobs</a>
                 </div>
-            @endforeach
-            <div class="col-12 text-center mt-4">
-                <a href="browse-jobs" class="btn btn-common">Browse All Jobs</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+@endif
 
 
 <section class="how-it-works section">
@@ -190,7 +203,7 @@
                 <div class="counter-box">
                     <div class="icon"><i class="lni lni-home"></i></div>
                     <div class="fact-count">
-                        <h3><span class="counter">{{ $total_Jobs }}</span></h3>
+                        <h3><span class="counter">{{ $total_jobs }}</span></h3>
                         <p>Jobs Posted</p>
                     </div>
                 </div>
@@ -201,7 +214,7 @@
                 <div class="counter-box">
                     <div class="icon"><i class="lni lni-save"></i></div>
                     <div class="fact-count">
-                        <h3><span class="counter">{{ $total_Users }}</span></h3>
+                        <h3><span class="counter">{{ $total_users }}</span></h3>
                         <p>Applicants</p>
                     </div>
                 </div>

@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     @foreach($job as $jobs)
-                        <a class="job-listings" href="job-details.html">
+                        <a class="job-listings" href="job-details/{{ $jobs->id }}">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-xs-12">
                                     <div class="job-company-logo">

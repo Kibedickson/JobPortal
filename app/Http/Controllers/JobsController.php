@@ -14,21 +14,28 @@ class JobsController extends Controller
     }
     public function store(){
         $data = request()->validate([
-            'job_title' => 'required',
-            'owner' => 'required',
+            'title' => 'required',
             'location' => 'required',
-            'category' => 'required',
-            'job_tag' => 'required',
             'description' => 'required',
-            'contact' => 'required',
-            'closing_date' => 'required',
+            'category' => 'required',
+            'deadline' => 'required',
         ]);
+        $data['employer_id'] = auth()->id();
 
         Jobs::create($data);
         return redirect('manage-jobs');
     }
 
     public function show(){
-        return view('pages.browse-jobs');
+        $jobs = Jobs::where('employer_id', auth()->id())->paginate(3);
+        $jobs_count = Jobs::where('employer_id', auth()->id())->where('candidate_id',!null)->count();
+
+        return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
     }
+
+    public function destroy(Jobs $id){
+        $id->delete();
+        return back();
+    }
+
 }
