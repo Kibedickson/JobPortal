@@ -30,60 +30,37 @@
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-12">
-                            <div class="job-details">
-                                <h6>Job Title</h6>
-                            </div>
+                    <div class="col-lg-12 col-md-12 col-xs-10">
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Deadline</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($job as $jobs)
+                                    <tr>
+                                        <td>{{ $jobs->title }}</td>
+                                        <td>{{ $jobs->category }}</td>
+                                        <td>{{ $jobs->description }}</td>
+                                        <td>{{ $jobs->location }}</td>
+                                        <td>{{ $jobs->deadline }}</td>
+                                        <td><a class="btn btn-common" style="text-transform: capitalize; padding: 6px 18px;">Apply</a></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-                            <h6>Job Tag</h6>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <h6>Location</h6>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                            <h6>Closing Date</h6>
-                        </div>
+                        <ul class="pagination">
+                            <li>{{ $job->appends(request()->except('page'))->links() }}</li>
+                        </ul>
+
                     </div>
-                    @foreach($job as $jobs)
-                        <a class="job-listings" href="job-details/{{ $jobs->id }}">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-xs-12">
-                                    <div class="job-company-logo">
-                                        <img src="assets/img/features/img1.png" alt="">
-                                    </div>
-                                    <div class="job-details">
-                                        <h3>{{ $jobs->job_title }}</h3>
-                                        <span class="company-neme">
-                                        {{ $jobs->owner }}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12 text-center">
-                                <span class="btn-open">
-                                {{ $jobs->job_tag }}
-                                </span>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                                    <div class="location">
-                                        <i class="lni-map-marker"></i> {{ $jobs->location }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                                    <span class="btn-full-time">{{ $jobs->closing_date }}</span>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                                    <span class="btn-apply">Apply Now</span>
-                                </div>
-                            </div>
-                        </a>
-                    @endforeach
-
-                    <ul class="pagination">
-                       <li>{{ $job->links() }}</li>
-                    </ul>
-
                 </div>
             </div>
         </div>
