@@ -74,7 +74,19 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'user_id' => '2',
+                'user_id' => '10',
+                'roles_id' => '2',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'user_id' => '11',
+                'roles_id' => '3',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'user_id' => '12',
                 'roles_id' => '2',
                 'created_at' => now(),
                 'updated_at' => now()

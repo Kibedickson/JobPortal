@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs;
+use App\Proposals;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -28,7 +29,7 @@ class JobsController extends Controller
 
     public function show(){
         $jobs = Jobs::where('employer_id', auth()->id())->paginate(3);
-        $jobs_count = Jobs::where('employer_id', auth()->id())->where('candidate_id',!null)->count();
+        $jobs_count = Proposals::where('employer_id', auth()->id())->count();
 
         return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
     }

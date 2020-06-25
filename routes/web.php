@@ -26,6 +26,9 @@ Route::delete('/manage-jobs/{id}', 'JobsController@destroy');
 Route::get('/manage-jobs/{job}/edit', 'JobsController@edit')->name('edit-job');
 Route::patch('/manage-jobs/{job}', 'JobsController@update');
 
+Route::post('proposals/{job}/{employer}', 'ProposalsController@store');
+Route::get('proposals', 'ProposalsController@show')->name('proposals');
+
 Route::group(['middleware' => ['auth']], function (){
     Route::get('about', function (){
         return view('pages.about');

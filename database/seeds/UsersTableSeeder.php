@@ -102,6 +102,38 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
+            ],
+            [
+            'name' =>'Hasad Hayden',
+            'email' => 'rycomuvy@mailinator.com',
+            'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+            'remember_token' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
+            ],
+            [
+                'name' =>'Baker Ballard',
+                'email' => 'fibopabesu@mailinator.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' =>'Xena Lindsey',
+                'email' => 'catihy@mailinator.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' =>'Vincent Morris',
+                'email' => 'givury@mailinator.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ];
 

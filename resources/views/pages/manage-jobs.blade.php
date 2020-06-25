@@ -50,7 +50,7 @@
                                     <td>{{ $job->description }}</td>
                                     <td>{{ $job->location }}</td>
                                     <td>{{ $job->deadline }}</td>
-                                    <td><a class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
+                                    <td><a href="{{ route('proposals') }}" class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
                                     <td><a href="manage-jobs/{{ $job->id }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
                                     <td>
                                         <form action="manage-jobs/{{ $job->id }}" method="Post">

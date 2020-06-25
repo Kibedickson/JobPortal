@@ -50,7 +50,12 @@
                                         <td>{{ $jobs->description }}</td>
                                         <td>{{ $jobs->location }}</td>
                                         <td>{{ $jobs->deadline }}</td>
-                                        <td><a class="btn btn-common" style="text-transform: capitalize; padding: 6px 18px;">Apply</a></td>
+                                        <td>
+                                            <form action="proposals/{{ $jobs->id }}/{{ $jobs->employer_id }}" method="post">
+                                                @csrf
+                                                <button type="submit" class="btn btn-common">Apply</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

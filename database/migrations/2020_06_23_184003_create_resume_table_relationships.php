@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRelationshipResume extends Migration
+class CreateResumeTableRelationships extends Migration
 {
     /**
      * Run the migrations.
@@ -26,6 +26,6 @@ class AddRelationshipResume extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('resume_table_relationships');
     }
 }
