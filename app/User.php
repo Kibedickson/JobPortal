@@ -38,21 +38,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function jobs(){
-        return $this->belongsToMany(Jobs::class);
-    }
-
     public function roles(){
-        return $this->belongsToMany(Roles::class);
+        return $this->belongsToMany(Role::class);
     }
 
-    public function resume(){
-        return $this->hasOne(Resumes::class);
+    public function jobs(){
+        return $this->hasMany(Job::class);
     }
 
     public function isEmployer(){
         return $this->roles()->where('id', 2)->count()>0;
     }
+
     public function isCandidate(){
         return $this->roles()->where('id', 3)->count()>0;
     }

@@ -48,8 +48,8 @@
                                 Candidates
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="{{route('browse-jobs')}}">Browse Jobs</a></li>
-                                <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="{{ route('job-details') }}">Job Details</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="">Browse Jobs</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="">Job Details</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown {{ (request()->is('post-job', 'manage-jobs','manage-applications')) ? 'active' : '' }}">
@@ -57,18 +57,18 @@
                                 Employer
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item{{ (request()->is('post-job')) ? 'active' : '' }}" href="{{ route('post-job') }}">Add Job</a></li>
-                                <li><a class="dropdown-item{{ (request()->is('manage-jobs')) ? 'active' : '' }}" href="{{ route('manage-jobs') }}">Manage Jobs</a></li>
-                                <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="{{ route('manage-applications') }}">Manage Applications</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('post-job')) ? 'active' : '' }}" href="">Add Job</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('manage-jobs')) ? 'active' : '' }}" href="">Manage Jobs</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="">Manage Applications</a></li>
                             </ul>
                         </li>
                         <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
-                            <a class="nav-link" href="{{route('contact')}}">
+                            <a class="nav-link" href="">
                                 Contact
                             </a>
                         </li>
                         <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('about') }}">
+                            <a class="nav-link" href="">
                                 About
                             </a>
                         </li>

@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Resumes extends Model
+class Job extends Model
 {
-    public function user(){
+    protected $guarded = [];
+
+    public function users(){
         return $this->belongsTo(User::class);
     }
 }

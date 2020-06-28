@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJobsTableRelationships extends Migration
+class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,18 @@ class CreateJobsTableRelationships extends Migration
      */
     public function up()
     {
-        Schema::table('jobs', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('location');
+            $table->longText('description');
+            $table->string('category');
+            $table->date('deadline');
             $table->unsignedBigInteger('employer_id');
             $table->foreign('employer_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('candidate_id')->nullable();
             $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +35,6 @@ class CreateJobsTableRelationships extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs_table_relationships');
+        Schema::dropIfExists('jobs');
     }
 }

@@ -20,7 +20,7 @@ Domain Path:      /languages/
 /* ____Footer */
 /* MODULES: */
 /* ____Categories */
-/* ____Featured Jobs */
+/* ____Featured Job */
 /* ____Pricing-table */
 /* ____Blog */
 /* ____Single Blog */
@@ -1777,7 +1777,7 @@ Pricing Table
   box-shadow: 0px 3px 9px rgba(96, 94, 94, 0.17); }
 
 /* ==========================================================================
-   Browse Jobs Page Style
+   Browse Job Page Style
    ========================================================================== */
 .job-browse .wrap-search-filter {
   margin-bottom: 30px; }
@@ -2137,7 +2137,7 @@ Pricing Table
   margin-left: 76px; }
 
 /* ==========================================================================
-   Manage Jobs Page Style
+   Manage Job Page Style
    ========================================================================== */
 .candidates .can-img img {
   width: 48px;

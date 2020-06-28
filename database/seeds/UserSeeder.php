@@ -3,7 +3,7 @@
 use App\User;
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -104,12 +104,12 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-            'name' =>'Hasad Hayden',
-            'email' => 'rycomuvy@mailinator.com',
-            'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
-            'remember_token' => null,
-            'created_at' => now(),
-            'updated_at' => now(),
+                'name' =>'Hasad Hayden',
+                'email' => 'rycomuvy@mailinator.com',
+                'password' => '$2y$10$7aq48yGSWnE0x3Qmvfmd/uuOJL4KQz73we97VxpAww1nYTxw/sib.',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' =>'Baker Ballard',

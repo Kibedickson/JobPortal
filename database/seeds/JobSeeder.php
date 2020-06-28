@@ -1,9 +1,9 @@
 <?php
 
-use App\Jobs;
+use App\Job;
 use Illuminate\Database\Seeder;
 
-class JobsTableSeeder extends Seeder
+class JobSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -93,7 +93,6 @@ class JobsTableSeeder extends Seeder
 
         ];
 
-        Jobs::insert($jobs);
-
+        Job::insert($jobs);
     }
 }
