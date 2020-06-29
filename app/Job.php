@@ -29,4 +29,8 @@ class Job extends Model
     public function candidate(){
         return $this->belongsTo(User::class, 'candidate_id');
     }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

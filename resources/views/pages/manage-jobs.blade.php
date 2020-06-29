@@ -51,9 +51,9 @@
                                     <td>{{ $job->location }}</td>
                                     <td>{{ $job->deadline }}</td>
                                     <td><a href="" class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
-                                    <td><a href="/job/{{ $job->slug }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
+                                    <td><a href="jobs/{{ $job->slug }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
                                     <td>
-                                        <form action="manage-jobs/{{ $job->id }}" method="Post">
+                                        <form action="/jobs/{{ $job->slug }}" method="Post">
                                             @method('DELETE')
                                             @csrf
                                             <button class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Delete</button>

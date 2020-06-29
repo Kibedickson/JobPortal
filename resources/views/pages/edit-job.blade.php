@@ -19,7 +19,7 @@
                 <div class="col-lg-9 col-md-12 col-xs-12">
                     <div class="post-job box">
                         <h3 class="job-title">Edit Job</h3>
-                        <form class="form-ad" action="/manage-jobs/{{ $job->id }}" method="POST">
+                        <form class="form-ad" action="/jobs/{{ $job->slug }}" method="POST">
                             @method('PATCH')
                             @csrf
                             <div class="form-group">

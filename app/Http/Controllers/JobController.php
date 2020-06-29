@@ -83,7 +83,18 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'deadline' => 'required',
+        ]);
+        $data['employer_id'] = auth()->id();
+
+        $job->slug = null;
+        $job->update($data);
+        return redirect(route('jobs.index'));
     }
 
     /**
@@ -94,6 +105,7 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        $job->delete();
+        return back();
     }
 }
