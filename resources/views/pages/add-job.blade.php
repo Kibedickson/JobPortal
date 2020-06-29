@@ -19,7 +19,7 @@
                 <div class="col-lg-9 col-md-12 col-xs-12">
                     <div class="post-job box">
                         <h3 class="job-title">Post a new Job</h3>
-                        <form class="form-ad" action="/addjob" method="POST">
+                        <form class="form-ad" action="{{ route('jobs.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label class="control-label"><strong>Job Title</strong></label>

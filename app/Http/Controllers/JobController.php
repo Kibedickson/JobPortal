@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
@@ -14,7 +15,10 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::where('employer_id'. auth()->id())->paginate(3);
+        $jobs = Job::where('employer_id', auth()->id())->paginate(3);
+        $jobs_count = DB::table('job_user')->where('employer_id', auth()->id())->count();
+
+        return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
     }
 
     /**
@@ -24,7 +28,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.add-job');
     }
 
     /**
@@ -35,7 +39,17 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'deadline' => 'required',
+        ]);
+        $data['employer_id'] = auth()->id();
+
+        Job::create($data);
+        return redirect(route('jobs.index'));
     }
 
     /**
@@ -57,7 +71,7 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        //
+        return view('pages.edit-job', compact('job'));
     }
 
     /**

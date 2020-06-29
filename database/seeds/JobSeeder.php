@@ -93,6 +93,6 @@ class JobSeeder extends Seeder
 
         ];
 
-        Job::insert($jobs);
+        collect($jobs)->each(function ($jobs) { Job::create($jobs); });
     }
 }

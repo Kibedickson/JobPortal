@@ -52,13 +52,13 @@
                                 <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="">Job Details</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown {{ (request()->is('post-job', 'manage-jobs','manage-applications')) ? 'active' : '' }}">
+                        <li class="nav-item dropdown {{ (request()->is('jobs/create', 'jobs','manage-applications')) ? 'active' : '' }}">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Employer
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item{{ (request()->is('post-job')) ? 'active' : '' }}" href="">Add Job</a></li>
-                                <li><a class="dropdown-item{{ (request()->is('manage-jobs')) ? 'active' : '' }}" href="">Manage Jobs</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('jobs/create')) ? 'active' : '' }}" href="{{ route('jobs.create') }}">Add Job</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('jobs')) ? 'active' : '' }}" href="{{ route('jobs.index') }}">Manage Jobs</a></li>
                                 <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="">Manage Applications</a></li>
                             </ul>
                         </li>
@@ -105,7 +105,7 @@
         <div class="mobile-menu" data-logo="{{ URL::asset('assets/img/logo-mobile.png') }}"></div>
     </nav>
 </header>
-    @yield('content')
+@yield('content')
 
 <footer>
     <div id="copyright">

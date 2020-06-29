@@ -33,15 +33,15 @@
                     <div class="table-responsive">
                         <table class="table table-borderless">
                             <thead>
-                                <tr>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Deadline</th>
-                                    <th scope="col">Candidates</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Deadline</th>
+                                <th scope="col">Candidates</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach($jobs as $job)
@@ -50,8 +50,8 @@
                                     <td>{{ $job->description }}</td>
                                     <td>{{ $job->location }}</td>
                                     <td>{{ $job->deadline }}</td>
-                                    <td><a href="{{ route('proposals') }}" class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
-                                    <td><a href="manage-jobs/{{ $job->id }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
+                                    <td><a href="" class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
+                                    <td><a href="/job/{{ $job->slug }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
                                     <td>
                                         <form action="manage-jobs/{{ $job->id }}" method="Post">
                                             @method('DELETE')
