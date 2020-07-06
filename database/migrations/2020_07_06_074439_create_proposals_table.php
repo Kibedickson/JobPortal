@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJobUserTable extends Migration
+class CreateProposalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateJobUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('proposals', function (Blueprint $table) {
+            $table->Bigincrements('id');
             $table->unsignedBigInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('jobs');
-            $table->unsignedBigInteger('employer_id');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->unsignedBigInteger('candidate_id');
+            $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateJobUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_user');
+        Schema::dropIfExists('proposals');
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
+use App\Proposal;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class JobUserSeeder extends Seeder
+class ProposalSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,30 +12,26 @@ class JobUserSeeder extends Seeder
      */
     public function run()
     {
-        $job_user = [
+        $proposals = [
             [
-                'user_id' => 3,
+                'candidate_id' => 3,
                 'job_id' => 5,
-                'employer_id' => 10,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'user_id' => 5,
+                'candidate_id' => 5,
                 'job_id' => 5,
-                'employer_id' => 10,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'user_id' => 7,
+                'candidate_id' => 7,
                 'job_id' => 1,
-                'employer_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ]
         ];
-
-        DB::table('job_user')->insert($job_user);
+        Proposal::insert($proposals);
     }
 }

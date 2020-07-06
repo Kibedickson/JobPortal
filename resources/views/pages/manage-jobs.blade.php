@@ -38,7 +38,7 @@
                                 <th scope="col">Description</th>
                                 <th scope="col">Location</th>
                                 <th scope="col">Deadline</th>
-                                <th scope="col">Candidates</th>
+                                <th scope="col">Proposals</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
                             </tr>
@@ -50,8 +50,8 @@
                                     <td>{{ $job->description }}</td>
                                     <td>{{ $job->location }}</td>
                                     <td>{{ $job->deadline }}</td>
-                                    <td><a href="" class="btn btn-common text-center" style="font-size: 10px; padding: 5px 15px; text-transform: capitalize;">{{ $jobs_count }}</a></td>
-                                    <td><a href="jobs/{{ $job->slug }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
+                                    <td><a href="/jobs/{{ $job->slug }}" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">{{ $job->proposals->count() }}</a></td>
+                                    <td><a href="/jobs/{{ $job->slug }}/edit" class="btn btn-common" style="font-size: 10px; padding: 3px 10px; text-transform: capitalize;">Edit</a></td>
                                     <td>
                                         <form action="/jobs/{{ $job->slug }}" method="Post">
                                             @method('DELETE')

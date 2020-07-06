@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +20,9 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::where('employer_id', auth()->id())->paginate(3);
-        $jobs_count = DB::table('job_user')->where('employer_id', auth()->id())->count();
+        $jobs = Job::with('proposals')->where('employer_id', auth()->id())->paginate(3);
 
-        return view('pages.manage-jobs', compact('jobs', 'jobs_count'));
+        return view('pages.manage-jobs', compact('jobs'));
     }
 
     /**
@@ -55,18 +59,19 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Job  $job
+     * @param Job $job
      * @return \Illuminate\Http\Response
      */
     public function show(Job $job)
     {
-        //
+        $job->load(['proposals', 'candidate']);
+        return view('pages.proposals', compact('job'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Job  $job
+     * @param Job $job
      * @return \Illuminate\Http\Response
      */
     public function edit(Job $job)
@@ -78,7 +83,7 @@ class JobController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Job  $job
+     * @param Job $job
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Job $job)
@@ -100,7 +105,7 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Job  $job
+     * @param Job $job
      * @return \Illuminate\Http\Response
      */
     public function destroy(Job $job)
