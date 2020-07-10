@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ResumeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,13 +40,26 @@ class ResumeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data= $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'age' => 'required',
+            'degree' => 'required',
+            'field' => 'required',
+            'school' => 'required',
+            'year' => 'required',
+            'skill' => 'required'
+        ]);
+        $data['user_id'] = auth()->id();
+
+        Resume::create($data);
+        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Resume  $resume
+     * @param Resume $resume
      * @return \Illuminate\Http\Response
      */
     public function show(Resume $resume)
@@ -52,7 +70,7 @@ class ResumeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Resume  $resume
+     * @param Resume $resume
      * @return \Illuminate\Http\Response
      */
     public function edit(Resume $resume)
@@ -64,7 +82,7 @@ class ResumeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resume  $resume
+     * @param Resume $resume
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Resume $resume)
@@ -75,7 +93,7 @@ class ResumeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Resume  $resume
+     * @param Resume $resume
      * @return \Illuminate\Http\Response
      */
     public function destroy(Resume $resume)

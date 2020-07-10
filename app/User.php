@@ -45,6 +45,9 @@ class User extends Authenticatable
     public function jobs(){
         return $this->hasMany(Job::class);
     }
+    public function resume(){
+        return $this->hasOne(Resume::class);
+    }
 
     public function isEmployer(){
         return $this->roles()->where('id', 2)->count()>0;
