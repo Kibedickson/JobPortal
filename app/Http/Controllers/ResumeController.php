@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Job;
-use App\Proposal;
+use App\Resume;
 use Illuminate\Http\Request;
 
-class ProposalController extends Controller
+class ResumeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +24,7 @@ class ProposalController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.resume');
     }
 
     /**
@@ -41,22 +35,16 @@ class ProposalController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'job_id' => 'required',
-        ]);
-        $data['candidate_id'] = auth()->id();
-        Proposal::create($data);
-
-        return redirect(route('jobs.index'));
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Proposal  $proposal
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function show(Proposal $proposal)
+    public function show(Resume $resume)
     {
         //
     }
@@ -64,10 +52,10 @@ class ProposalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Proposal  $proposal
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proposal $proposal)
+    public function edit(Resume $resume)
     {
         //
     }
@@ -75,28 +63,22 @@ class ProposalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param Job $job
-     * @return void
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Resume  $resume
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, Resume $resume)
     {
-        $data = $request->validate([
-            'candidate_id' => 'required',
-        ]);
-        Job::where('slug', $slug)->update($data);
-
-        return redirect(route('jobs.index'));
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Proposal  $proposal
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Proposal $proposal)
+    public function destroy(Resume $resume)
     {
         //
     }

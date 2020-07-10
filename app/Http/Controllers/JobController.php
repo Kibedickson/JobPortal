@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\Proposal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,9 +21,13 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::with('proposals')->where('employer_id', auth()->id())->paginate(3);
-
-        return view('pages.manage-jobs', compact('jobs'));
+        if (auth()->user()->isEmployer()){
+            $jobs = Job::with('proposals')->where('employer_id', auth()->id())->paginate(3);
+            return view('pages.manage-jobs', compact('jobs'));
+        }elseif (auth()->user()->isCandidate()){
+            $jobs = Job::paginate(5);
+            return view('pages.browse-jobs', compact('jobs'));
+        }
     }
 
     /**

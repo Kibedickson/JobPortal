@@ -48,7 +48,7 @@
                                 Candidates
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="">Browse Jobs</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="{{ route('jobs.index') }}">Browse Jobs</a></li>
                                 <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="">Job Details</a></li>
                             </ul>
                         </li>
