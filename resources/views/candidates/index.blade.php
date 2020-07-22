@@ -54,7 +54,11 @@
                                             <form action="/proposals" method="post">
                                                 @csrf
                                                 <input type="hidden" name="job_id" value="{{ $job->id }}">
+                                                @if(\App\Proposal::HasApplied()->where('job_id', $job->id)->count())
+                                                    <button class="btn btn-common" disabled>Applied</button>
+                                                @else
                                                 <button type="submit" class="btn btn-common">Apply</button>
+                                                @endif
                                             </form>
                                         </td>
                                     </tr>

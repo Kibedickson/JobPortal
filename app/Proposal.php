@@ -16,6 +16,11 @@ class Proposal extends Model
         return $this->belongsTo(User::class, 'candidate_id');
     }
 
+    public function scopeHasApplied($query)
+    {
+        return $query->where('candidate_id', auth()->id());
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

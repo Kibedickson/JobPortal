@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Job;
 use App\Proposal;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class JobController extends Controller
 {
@@ -17,16 +20,22 @@ class JobController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
         if (auth()->user()->isEmployer()){
+
             $jobs = Job::with('proposals')->where('employer_id', auth()->id())->paginate(3);
-            return view('pages.manage-jobs', compact('jobs'));
+
+            return view('employers.index', compact('jobs'));
+
         }elseif (auth()->user()->isCandidate()){
-            $jobs = Job::paginate(5);
-            return view('pages.browse-jobs', compact('jobs'));
+
+            $jobs = Job::with('proposals')->paginate(5);
+
+            return view('candidates.index', compact('jobs'));
+
         }
     }
 
@@ -37,7 +46,9 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('pages.add-job');
+
+        return view('employers.create');
+
     }
 
     /**
@@ -48,17 +59,22 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
+
             'title' => 'required',
             'location' => 'required',
             'description' => 'required',
             'category' => 'required',
             'deadline' => 'required',
         ]);
+
         $data['employer_id'] = auth()->id();
 
         Job::create($data);
+
         return redirect(route('jobs.index'));
+
     }
 
     /**
@@ -70,7 +86,9 @@ class JobController extends Controller
     public function show(Job $job)
     {
         $job->load(['proposals', 'candidate']);
-        return view('pages.proposals', compact('job'));
+
+        return view('candidates.show', compact('job'));
+
     }
 
     /**
@@ -81,7 +99,9 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        return view('pages.edit-job', compact('job'));
+
+        return view('employers.edit', compact('job'));
+
     }
 
     /**
@@ -93,6 +113,7 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
+
         $data = $request->validate([
             'title' => 'required',
             'location' => 'required',
@@ -100,10 +121,13 @@ class JobController extends Controller
             'category' => 'required',
             'deadline' => 'required',
         ]);
+
         $data['employer_id'] = auth()->id();
 
         $job->slug = null;
+
         $job->update($data);
+
         return redirect(route('jobs.index'));
     }
 
@@ -115,7 +139,10 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
+
         $job->delete();
+
         return back();
+        
     }
 }
