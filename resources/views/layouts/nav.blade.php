@@ -18,25 +18,29 @@
                             Home
                         </a>
                     </li>
-                    <li class="nav-item dropdown {{ (request()->is('browse-jobs','job-details')) ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Candidates
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="{{ route('jobs.index') }}">Browse Jobs</a></li>
-                            <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="">Job Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown {{ (request()->is('jobs/create', 'jobs','manage-applications')) ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Employer
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item{{ (request()->is('jobs/create')) ? 'active' : '' }}" href="{{ route('jobs.create') }}">Add Job</a></li>
-                            <li><a class="dropdown-item{{ (request()->is('jobs')) ? 'active' : '' }}" href="{{ route('jobs.index') }}">Manage Jobs</a></li>
-                            <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="">Manage Applications</a></li>
-                        </ul>
-                    </li>
+                    @if(Gate::allows('isCandidate'))
+                        <li class="nav-item dropdown {{ (request()->is('browse-jobs','job-details')) ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Candidates
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item {{ (request()->is('browse-jobs')) ? 'active' : '' }}" href="{{ route('jobs') }}">Browse Jobs</a></li>
+                                <li><a class="dropdown-item {{ (request()->is('job-details')) ? 'active' : '' }}" href="">Job Details</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if(Gate::allows('isEmployer'))
+                        <li class="nav-item dropdown {{ (request()->is('jobs/create', 'jobs','manage-applications')) ? 'active' : '' }}">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Employer
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item{{ (request()->is('jobs/create')) ? 'active' : '' }}" href="{{ route('jobs/create') }}">Add Job</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('jobs')) ? 'active' : '' }}" href="{{ route('jobs') }}">Manage Jobs</a></li>
+                                <li><a class="dropdown-item{{ (request()->is('manage-applications')) ? 'active' : '' }}" href="">Manage Applications</a></li>
+                            </ul>
+                        </li>
+                    @endif
                     <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
                         <a class="nav-link" href="">
                             Contact
