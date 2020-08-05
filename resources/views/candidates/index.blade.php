@@ -51,15 +51,21 @@
                                         <td>{{ $job->location }}</td>
                                         <td>{{ $job->deadline }}</td>
                                         <td>
-                                            <form action="/proposals" method="post">
-                                                @csrf
-                                                <input type="hidden" name="job_id" value="{{ $job->id }}">
-                                                @if(\App\Proposal::HasApplied()->where('job_id', $job->id)->count())
-                                                    <button class="btn btn-common" disabled>Applied</button>
-                                                @else
-                                                <button type="submit" class="btn btn-common">Apply</button>
-                                                @endif
-                                            </form>
+
+                                            @if(\App\Proposal::HasApplied()->where('job_id', $job->id)->count())
+                                                <form action="/proposals    " method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input type="hidden" name="job_id" value="{{ $job->id }}">
+                                                    <button class="btn btn-danger">Cancel</button>
+                                                </form>
+                                            @else
+                                                <form action="/proposals" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="job_id" value="{{ $job->id }}">
+                                                    <button type="submit" class="btn btn-common">Apply</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

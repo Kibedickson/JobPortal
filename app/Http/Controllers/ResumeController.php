@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ResumeStoreRequest;
+use App\Proposal;
 use App\Resume;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ResumeController extends Controller
 {
@@ -14,30 +16,50 @@ class ResumeController extends Controller
 
     public function index()
     {
-        $resume = Resume::where();
-        return view('candidates.profiles.index', compact('resume'));
+        $resumes = Resume::where('user_id', auth()->id())->get();
+
+        return view('candidates.profiles.index', compact('resumes'));
     }
 
     public function create()
     {
-        return view('candidates.create');
+        if (Gate::allows('isCandidate')){
+            return view('candidate.create');
+        }else{
+            return "No Permission";
+        }
     }
 
-    public function store(Request $request)
+    public function store(ResumeStoreRequest $request)
     {
-        $data= $request->validate([
-            'title' => 'required',
-            'location' => 'required',
-            'age' => 'required',
-            'degree' => 'required',
-            'field' => 'required',
-            'school' => 'required',
-            'year' => 'required',
-            'skill' => 'required'
-        ]);
-        $data['user_id'] = auth()->id();
 
-        Resume::create($data);
-        return redirect()->route('home');
+        $request['user_id'] = auth()->id();
+
+        Resume::create($request->all());
+        return redirect()->route('profiles');
     }
+
+    public function edit(Resume $resume){
+
+        return view('candidates.profiles.edit', compact('resume'));
+
+    }
+
+    public function update(ResumeStoreRequest $request, Resume $resume){
+
+        $request['user_id'] = auth()->id();
+
+        $resume->update($request->all());
+
+        return redirect(route('profiles'));
+
+    }
+
+    public function show(){
+
+        $applications = Proposal::where('candidate_id', auth()->id())->get();
+
+        return view('candidates.profiles.show', compact('applications'));
+    }
+
 }

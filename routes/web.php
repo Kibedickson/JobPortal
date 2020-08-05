@@ -27,8 +27,11 @@ Route::delete('jobs/{job}', 'JobController@destroy');
 
 Route::post('proposals', 'ProposalController@store');
 Route::put('proposals/{proposal}', 'ProposalController@update');
+Route::delete('proposals', 'ProposalController@destroy');
 
-Route::resource('resumes', 'ResumeController');
-Route::get('resumes', 'ResumeController@index')->name('resumes');
-Route::get('resumes/create', 'ResumeController@create')->name('resumes/create');
-Route::post('resumes', 'ResumeController@store');
+Route::get('profiles', 'ResumeController@index')->name('profiles');
+Route::get('profiles/create', 'ResumeController@create')->name('profiles/create');
+Route::get('profiles/applications', 'ResumeController@show')->name('applications');
+Route::post('profiles', 'ResumeController@store');
+Route::get('profiles/{resume}/edit', 'ResumeController@edit');
+Route::patch('profiles/{resume}', 'ResumeController@update');

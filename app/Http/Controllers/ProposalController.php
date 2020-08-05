@@ -34,4 +34,19 @@ class ProposalController extends Controller
         return redirect(route('jobs'));
 
     }
+    public function destroy(Request $request)
+    {
+
+        $proposals = Proposal::where('job_id', $request['job_id'])->where('candidate_id', auth()->id());
+        $proposals->delete();
+        $data = [
+            'candidate_id' => null
+        ];
+
+        Job::where('id', $request['job_id'])->update($data);
+
+
+        return back();
+
+    }
 }
