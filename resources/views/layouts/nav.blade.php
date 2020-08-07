@@ -51,16 +51,22 @@
                             About
                         </a>
                     </li>
+                    @if(Gate::allows('isCandidate'))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('profiles') }}">My Resume</a></li>
+                                <li><a class="dropdown-item" href="{{ route('applications') }}">Manage Applications</a></li>
+                            </ul>
+                        </li>
+                    @endif
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @else
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('profiles') }}">
-                                Profile
-                            </a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>

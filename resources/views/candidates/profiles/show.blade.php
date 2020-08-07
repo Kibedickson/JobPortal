@@ -42,6 +42,7 @@
                                         <p class="text-success">Accepted</p>
                                         @else
                                         <p class="text-danger">Processing</p>
+                                            <p>{{ $applications->count() }}</p>
                                         @endif
 
                                     </div>

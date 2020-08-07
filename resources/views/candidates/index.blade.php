@@ -53,7 +53,7 @@
                                         <td>
 
                                             @if(\App\Proposal::HasApplied()->where('job_id', $job->id)->count())
-                                                <form action="/proposals    " method="post">
+                                                <form action="/proposals" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <input type="hidden" name="job_id" value="{{ $job->id }}">

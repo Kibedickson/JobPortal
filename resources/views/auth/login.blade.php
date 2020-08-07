@@ -55,6 +55,7 @@
                                 {{ __('Login') }}
                             </button>
                         </form>
+                        <p class="text-center"><a href="{{ route('password.request') }}"> Forgot Your Password?</a></p>
                         <p class="text-center">Don't have an account?<a href="{{ route('register') }}"> Register</a></p>
                     </div>
                 </div>
