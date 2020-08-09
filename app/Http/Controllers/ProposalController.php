@@ -21,7 +21,12 @@ class ProposalController extends Controller
         $data['candidate_id'] = auth()->id();
         Proposal::create($data);
 
-        return redirect(route('jobs'));
+        $notification = array(
+            'message' => 'Job Applied Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('jobs'))->with($notification);
     }
 
     public function update(Request $request, $slug)
@@ -31,7 +36,12 @@ class ProposalController extends Controller
         ]);
         Job::where('slug', $slug)->update($data);
 
-        return redirect(route('jobs'));
+        $notification = array(
+            'message' => 'Candidate Selected Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('jobs'))->with($notification);
 
     }
     public function destroy(Request $request)
@@ -45,8 +55,13 @@ class ProposalController extends Controller
 
         Job::where('id', $request['job_id'])->update($data);
 
+        $notification = array(
+            'message' => 'Proposal Cancelled Successfully!',
+            'alert-type' => 'success'
+        );
 
-        return back();
+
+        return redirect(route('jobs'))->with($notification);
 
     }
 }

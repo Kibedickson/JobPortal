@@ -26,7 +26,11 @@ class ResumeController extends Controller
         if (Gate::allows('isCandidate')){
             return view('candidate.create');
         }else{
-            return "No Permission";
+            $notification = array(
+                'message' => 'No Permission!',
+                'alert-type' => 'error'
+            );
+            return redirect('/')->with($notification);
         }
     }
 
@@ -36,7 +40,13 @@ class ResumeController extends Controller
         $request['user_id'] = auth()->id();
 
         Resume::create($request->all());
-        return redirect()->route('profiles');
+
+        $notification = array(
+            'message' => 'Resume Created Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('profiles'))->with($notification);
     }
 
     public function edit(Resume $resume){
@@ -51,7 +61,12 @@ class ResumeController extends Controller
 
         $resume->update($request->all());
 
-        return redirect(route('profiles'));
+        $notification = array(
+            'message' => 'Resume Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('profiles'))->with($notification);
 
     }
 

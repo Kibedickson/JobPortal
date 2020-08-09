@@ -35,7 +35,11 @@ class JobController extends Controller
         if (Gate::allows('isEmployer')){
             return view('employers.create');
         }else{
-            return "No Permission";
+            $notification = array(
+                'message' => 'No Permission!',
+                'alert-type' => 'error'
+            );
+            return redirect('/')->with($notification);
         }
 
     }
@@ -56,7 +60,12 @@ class JobController extends Controller
 
         Job::create($data);
 
-        return redirect(route('jobs'));
+        $notification = array(
+            'message' => 'Job Added Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('jobs'))->with($notification);
 
     }
 
@@ -92,7 +101,12 @@ class JobController extends Controller
 
         $job->update($data);
 
-        return redirect(route('jobs'));
+        $notification = array(
+            'message' => 'Job Updated Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect(route('jobs'))->with($notification);
     }
 
     public function destroy(Job $job)
@@ -100,7 +114,12 @@ class JobController extends Controller
 
         $job->delete();
 
-        return back();
+        $notification = array(
+            'message' => 'Job Deleted Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
 
     }
 }

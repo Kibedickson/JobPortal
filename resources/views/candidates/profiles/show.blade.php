@@ -25,8 +25,8 @@
                             <div class="applications-content">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="thums">
-                                            <img src="assets/img/jobs/img-1.jpg" alt="">
+                                        <div class="thumb">
+                                            <img src="{{ url('assets/img/jobs/img-1.jpg') }}" alt="">
                                         </div>
                                         <h3>{{ $application->job->title }}</h3>
                                         <span>{{ $application->job->location }}</span>
@@ -42,25 +42,12 @@
                                         <p class="text-success">Accepted</p>
                                         @else
                                         <p class="text-danger">Processing</p>
-                                            <p>{{ $applications->count() }}</p>
                                         @endif
 
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-
-                        <br>
-
-                        <ul class="pagination">
-                            <li class="active"><a href="#" class="btn-prev"><i class="lni-angle-left"></i> prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="active"><a href="#" class="btn-next">Next <i class="lni-angle-right"></i></a></li>
-                        </ul>
 
                     </div>
                 </div>
