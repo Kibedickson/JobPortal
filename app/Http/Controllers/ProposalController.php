@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\Mail\ProposalAccepted;
 use App\Proposal;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ProposalController extends Controller
 {
